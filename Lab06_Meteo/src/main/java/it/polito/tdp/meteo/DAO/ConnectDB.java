@@ -4,15 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectDB {
-	
-	// check user e password
-	static private final String jdbcUrl = "jdbc:mysql://localhost/meteo?user=root&password=root";
-	
 
+
+public class ConnectDB {
+	//HIKARI
+	// check user e password
+	static private final String jdbcUrl = "jdbc:mysql://localhost/meteo?user=root&password=alessandra";
+	
+	
 	public static Connection getConnection() {
 
-		try {
+	try {
 				Connection connection = DriverManager.getConnection(jdbcUrl);
 				return connection;
 
@@ -21,6 +23,8 @@ public class ConnectDB {
 			e.printStackTrace();
 			throw new RuntimeException("Cannot get a connection " + jdbcUrl, e);
 		}
+		
+		
 	}
 
 }
